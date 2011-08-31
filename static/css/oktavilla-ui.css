@@ -232,6 +232,7 @@ h2 {
 .pills .active a,
 .pills .active a:hover,
 .pills .active a:focus {
+  cursor: default;
   color: #333; }  
   
 /* SEARCH */
@@ -247,7 +248,7 @@ h2 {
   float: left; }
 .search input {
   font-size: 14px;
-  padding: 3px 5px 4px;
+  padding: 4px 5px 5px;
   width: 200px;
   outline: none;
   color: #ccc;
@@ -320,12 +321,13 @@ h2 {
   outline: none;
   border: 0; }
 .taggable .tag {
-  color: #666;
+  color: #444;
   border: 1px solid #ddd;
   background: #eee;
   background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#e6e6e6));
-  -webkit-border-radius: 2px;
-  padding: 3px 8px 5px 30px;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+  -webkit-border-radius: 3px;
+  padding: 4px 8px 4px 30px;
   margin: -6px 2px 8px 0;
   display: inline-block;
   position: relative; }
@@ -336,17 +338,17 @@ h2 {
   outline: none;
   left: 0;
   top: 0;
-  padding: 4px 6px 4px 7px;
+  padding: 5px 6px 3px 7px;
   border-right: 1px solid #fff; }
 .taggable .tag.focused {
   background: #eb3535;
-  background: -webkit-gradient(linear, left top, left bottom, from(#eb3535), to(#c12c2c));
-  background: -moz-linear-gradient(top,  #eb3535,  #c12c2c);
-  border-color: #a62121;
+  text-shadow: none;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ee5f5b), to(#c43c35));
+  border-color: #a7332d;
   color: #fff; }
 .taggable .tag.focused a {
   color: #fff;
-  border-color: #a62121; }
+  border-color: #a7332d; }
 .taggable .tag a:hover,
 .taggable .tag a:focus {
   color: #ff0000; }
@@ -407,3 +409,118 @@ h2 {
   margin: 0 0 -3px 0; }
 .form .inputs-list label {
   font-weight: normal; }
+.form fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0; }
+  
+
+/* MESSAGE BOX */
+#message {
+	padding: 10px;
+	text-align: center; }
+#o-ui-msg {
+	position: absolute;
+	top: -2000px;
+	left: 0;
+	margin: 0 auto;
+	background: #333;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px; }
+#close-o-ui-msg {
+	position: absolute;
+	top: -15px;
+	right: -15px;
+	background: url(../img/icon_close.png) top left no-repeat;
+	width: 40px;
+	height: 40px;
+	text-indent: -9999px;
+	overflow: hidden; }
+#close-o-ui-msg:hover,
+#close-o-ui-msg:focus,
+#close-o-ui-msg:active {
+	background-position: -40px 0px; }
+.message #close-o-ui-msg {
+	display: none; }
+.message:hover #close-o-ui-msg {
+	display: block; }
+#o-ui-msg.error {
+	color: red; }
+#o-ui-msg.message {
+	color: #56A556;
+	font-size: 18px;
+	opacity: .9; }
+.message-body {
+	width: 300px;
+	background: white;
+	padding: 20px 20px 20px 20px;
+	margin: 7px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 1.2;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px; }
+#o-ui-msg.message .message-body {
+	padding-top: 40px;
+	padding-bottom: 40px; }
+.message-body UL {
+	margin: 0 0 -10px 0; }
+.message-body LI {
+	list-style-type: none;
+	padding: 0;
+	margin-bottom: 10px; }
+.message-body .question {
+	font-size: 14px;
+	margin: 15px 0 0 0;
+	font-weight: normal; }
+
+
+/* GENERAL EDIT FORM */
+#o-ui-msg.form .message-body {
+	text-align: left;
+	padding: 15px;
+	font-weight: normal; }
+#o-ui-msg.form .message-body H2 {
+	font-size: 20px;
+	font-weight: bold;
+	color: #333;
+	text-transform: uppercase;
+	margin: 0 0 10px 0px; }
+#o-ui-msg .form P.question {
+	margin-top: 7px; }
+#o-ui-msg .form .form-element {
+  margin-bottom: 13px; }
+#o-ui-msg .form input[type=text],
+#o-ui-msg .form input[type=password],
+#o-ui-msg .form textarea {
+  width: 270px; }
+#o-ui-msg .form fieldset {
+  margin: 15px 0 25px 0; }
+#file-upload-proxy {
+	visibility: hidden; }
+
+
+/* TOOL TIP */
+#o-ui-msg.tooltip .message-body {
+	width: 250px;
+	text-align: left;
+	padding: 7px;
+	font-size: 14px;
+	font-weight: normal;
+	border: 4px solid #333;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	margin: 0; }
+#o-ui-msg.tooltip {
+	background: url(../img/bg_arrow.png) center right no-repeat; }
+#o-ui-msg.aligned-to-left {
+	margin: 0 0 0 -5px;
+	padding: 0 10px 0 0;
+	background-position: center right; }
+#o-ui-msg.aligned-to-right {
+	margin: 0 -5px 0 0;
+	padding: 0 0 0 10px;
+	background-position: center left; }
+#o-ui-msg.loader {
+	background: url(../img/loader.gif) 0 7px no-repeat;
+	padding: 5px 0 5px 25px; }
