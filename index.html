@@ -3,8 +3,14 @@
     <link rel="stylesheet" href="static/css/oktavilla-ui.css">
   </head>
   <body>
+    <h1>Oktavilla UI Boilerplate</h1>
+    <p>
+      A collection of the most commonlu used UI elements in our apps.
+    </p>
+    
     <h2>Buttons etc.</h2>
     <div class="well">
+      Do stuff: 
       <button class="btn primary">Primary action</button>
       <button class="btn">Default button</button>
       <button class="btn positive">Positive button</button>
@@ -12,23 +18,108 @@
       <button class="btn discrete"><span>or</span> cancel</button>
     </div>
     <div class="well">
+      Large buttons:
       <button class="btn large primary">Save</button>
       <button class="btn large discrete"><span>or</span> cancel</button>
     </div>
     <div class="well">
+      Small buttons:
       <button class="btn small">Default button</button>
       <button class="btn small positive">Positive button</button>
     </div>
     <div class="well">
+      Advanced buttons: 
       <a href="#" class="switch on"><span class="knob"></span><span class="txt">On</span></a>
       <a href="#" class="switch off"><span class="knob"></span><span class="txt">Off</span></a>
+      <div class="multi-button">
+        <div class="list">
+          <ul>
+            <li><a href="#">Something selectable</a></li>
+            <li><a href="#">Something else selectable</a></li>
+            <li><a href="#">Third option</a></li>
+          </ul>
+        </div>
+        <button class="btn"><span></span> Multi button</button>
+      </div>
+    </div>
+    
+    <h2>Form elements</h2>
+    <div class="well">
+      <form class="form">
+      
+        <div class="form-element">
+          <label>Taggar</label>
+          <div class="taggable faux-input">
+            <span class="tags">
+              <span class="tag"><a href="#">&times;</a>Taggnamn</span>
+              <span class="tag"><a href="#">&times;</a>En till tagg</span>
+              <span class="tag"><a href="#">&times;</a>En tredje tagg</span>
+            </span>
+            <input type="text">
+          </div>
+        </div>
+        <div class="form-element">
+          <label>Common input</label>
+          <input type="text" name="input" value=""> SEK
+          <span class="note">
+            <b>Note:</b>
+            This selection is irreversible. Like my raincoat.
+          </span>
+        </div>
+        <div class="form-element">
+          <label>Large input</label>
+          <input type="text" class="large" value="">
+        </div>
+        <div class="form-element">
+          <label>Select</label>
+          <select>
+            <option>Something selectable</option>
+            <option>Another thing</option>
+            <option>More stuff</option>
+          </select>
+        </div>
+        <div class="form-element">
+          <label>File input</label>
+          <input type="file" value="">
+        </div>
+        <div class="form-element">
+          <label>Textarea</label>
+          <textarea cols="10" rows="10"></textarea>
+        </div>
+        <div class="form-element">
+          <label>Multiselect</label>
+          To-do
+        </div>
+        <div class="form-element">
+          <label>Date select</label>
+          To-do
+        </div>
+        <div class="form-element">
+          <label>Some options</label>
+          <ul class="inputs-list">
+            <li>
+              <label>
+                <input type="checkbox" name="optionsCheckboxes" value="option1">
+                <span>This is one option</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="optionsCheckboxes" value="option2">
+                <span>You can also check this</span>
+              </label>
+            </li>
+          </ul>
+        </div>
+      </form>
     </div>
     
     <h2>Navigation etc.</h2>
     <ul class="pills">
-      <li class="active"><a href="#">Start</a></li>
-      <li><a href="#">Second pill</a></li>
+      <li><a href="#">First pill</a></li>
+      <li class="active"><a href="#">Second pill</a></li>
       <li><a href="#">Third pill</a></li>
+      <li><a href="#">Fourth pill</a></li>
     </ul>
     <div class="search">
       <form action="" method="post">
@@ -36,6 +127,16 @@
         <input type="text" id="search-txt" name="search" value="Search">
         <input type="submit" value="search">
       </form>
+    </div>
+    <div class="pagination">
+      <ul>
+        <li class="previous disabled"><a href="#" rel="previous">&larr; Previous</a></li>
+        <li class="active"><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li class="next"><a href="#" rel="next">Next &rarr;</a></li>
+      </ul>
     </div>
   </body>
 </html>
