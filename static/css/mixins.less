@@ -1,0 +1,88 @@
+/* COLORS */
+
+@linkColor: #0093d0;
+@linkColorHover: darken(@linkColor, 10);
+
+@textDark: #3e3f41;
+@textMedium: #444;
+@textLight: #fff;
+
+@btnDefaultLight: #f9fbfd;
+@btnDefaultDark: #d8dcde;
+@btnPrimaryLight: #049cdb;
+@btnPrimaryDark: #1972b7;
+@btnPositiveLight: #62c462;
+@btnPositiveDark: #57a957;
+@btnNegativeLight: #ee5f5b;
+@btnNegativeDark: #c43c35;
+
+/* MIXINS */
+
+.clearfix {
+  zoom: 1;
+	&:before, &:after {
+    display: table;
+    content: "";
+	}
+	&:after {
+    clear: both;
+	}
+}
+.border-radius(@radius: 5px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+.box-shadow(@shadow: 0 1px 3px rgba(0,0,0,.25)) {
+  -webkit-box-shadow: @shadow;
+  -moz-box-shadow: @shadow;
+  box-shadow: @shadow;
+}
+.transition(@transition) {
+	-webkit-transition: @transition;
+	-moz-transition: @transition;
+	transition: @transition;
+}
+.opacity(@opacity: 100) {
+	filter: e(%("alpha(opacity=%d)", @opacity));
+	-khtml-opacity: @opacity / 100;
+	-moz-opacity: @opacity / 100;
+	opacity: @opacity / 100;
+}
+.styleAsButton(@startColor: @btnDefaultLight, @endColor: @btnDefaultDark, @textColor: @textDark) {
+  background-color: @endColor;
+  background-repeat: no-repeat;
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@startColor), color-stop(0.25, @startColor), to(@endColor));
+  background-image: -webkit-linear-gradient(@startColor, @startColor 0.25, @endColor);
+  background-image: -moz-linear-gradient(@startColor, @startColor 0.25, @endColor);
+  background-image: -ms-linear-gradient(@startColor, @startColor 0.25, @endColor);
+  background-image: -o-linear-gradient(@startColor, @startColor 0.25, @endColor);
+  background-image: linear-gradient(@startColor, @startColor 0.25, @endColor);
+  color: @textColor;
+  border: 1px solid darken(@endColor, 10);
+  border-left-color: @endColor;
+  border-right-color: @endColor;
+  border-top-color: darken(@startColor, 10);
+}
+#gradient {
+  .horizontal (@startColor: #555, @endColor: #333) {
+    background-color: @endColor;
+    background-repeat: repeat-x;
+    background-image: -moz-linear-gradient(left, @startColor, @endColor); // FF 3.6+
+    background-image: -ms-linear-gradient(left, @startColor, @endColor); // IE10
+    background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, @startColor), color-stop(100%, @endColor)); // Safari 4+, Chrome 2+
+    background-image: -webkit-linear-gradient(left, @startColor, @endColor); // Safari 5.1+, Chrome 10+
+    background-image: -o-linear-gradient(left, @startColor, @endColor); // Opera 11.10
+    background-image: linear-gradient(left, @startColor, @endColor); // Standard
+  }
+  .vertical (@startColor: #555, @endColor: #333) {
+    background-color: @endColor;
+    background-repeat: repeat-x;
+    background-image: -moz-linear-gradient(top, @startColor, @endColor); // FF 3.6+
+    background-image: -ms-linear-gradient(top, @startColor, @endColor); // IE10
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @startColor), color-stop(100%, @endColor)); // Safari 4+, Chrome 2+
+    background-image: -webkit-linear-gradient(top, @startColor, @endColor); // Safari 5.1+, Chrome 10+
+    background-image: -o-linear-gradient(top, @startColor, @endColor); // Opera 11.10
+    background-image: linear-gradient(top, @startColor, @endColor); // Standard
+  }
+}
